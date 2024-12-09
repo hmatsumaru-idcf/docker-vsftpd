@@ -1,6 +1,6 @@
-FROM centos
+FROM rockylinux:9
 
-RUN yum -y install openssl vsftpd && rm -rf /var/cache/yum/*
+RUN dnf -y install openssl vsftpd && rm -rf /var/cache/yum/*
 
 RUN useradd -ms /bin/bash guest && echo 'guest:guest' | chpasswd
 
